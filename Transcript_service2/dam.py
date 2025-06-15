@@ -7,6 +7,7 @@ app = Flask(__name__)
 def extract_transcript(url):
     command = [
         "yt-dlp",
+          "--cookies", "Transcript_serivce2/cookies.txt", 
         "--skip-download",
         "--write-auto-sub",
         "--sub-lang", "en",
