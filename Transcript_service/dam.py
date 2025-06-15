@@ -12,9 +12,11 @@ def extract_video_id(url):
 
 @app.route("/transcript", methods=["POST"])
 def get_transcript():
-    data = request.json
-    url = data.get("url")
-    video_id = extract_video_id(url)
+    data = request.get_json()
+    if not data or "url" not in data:
+        return jsonify({"error": "Missing 'url' in request body"}), 400
+
+    video_id = extract_video_id(data["url"])
     if not video_id:
         return jsonify({"error": "Invalid URL"}), 400
 
