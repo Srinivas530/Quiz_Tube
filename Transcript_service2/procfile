@@ -1,0 +1,1 @@
+web: gunicorn Transcript_service2.dam:app
