@@ -4,4 +4,4 @@ google-generativeai
 python-dotenv
 pathlib
 flask
-gunicorn
+
